@@ -53,11 +53,11 @@ function Brands() {
 
     {/* heading */}
 
-    <div className=' px-[100px] pt-[20px] font_poppins font-semibold text-[32px] leading-[48.96px]'>
+    <div className=' px-[100px] pt-[20px] font_poppins font-semibold text-[32px] leading-[48.96px] mt-[30px]'>
       <h1>Top Brands</h1>
     </div>
 
-    <div className=' h-[1px] bg-[#EEEEEE] mt-[5px]  mx-[100px]'>
+    <div className=' h-[1px] bg-[#EEEEEE] mt-[10px]  mx-[100px]'>
       {/* horizontal line */}
      </div>
      
@@ -65,7 +65,7 @@ function Brands() {
 
 {/* brand slide */}
 
-    <div className='flex   mt-[30px] custom-swiper-2 '>
+    <div className='flex   mt-[50px] custom-swiper-2 '>
         <Swiper
           modules={[Navigation, A11y]}
           spaceBetween={120}
