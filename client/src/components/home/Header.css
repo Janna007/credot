@@ -1,0 +1,102 @@
+.custom-swiper-1 .swiper-button-prev,
+.custom-swiper-1 .swiper-button-next {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  background-color: #808080; /* Gray background color */
+  border-radius: 100%; /* Makes the button circular */
+  
+
+}
+
+.custom-swiper-1 .swiper-button-prev,
+.custom-swiper-1.swiper-button-next {
+  width: 30px;
+  height: 30px;
+}
+
+/* Adjust button size for different breakpoints */
+
+/* Small devices */
+@media (min-width: 640px) {
+  .custom-swiper-1 .swiper-button-prev,
+  .custom-swiper-1 .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Medium devices */
+@media (min-width: 768px) {
+  .custom-swiper-1 .swiper-button-prev,
+  .custom-swiper-1 .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Large devices */
+@media (min-width: 1024px) {
+  .custom-swiper-1 .swiper-button-prev,
+  .custom-swiper-1 .swiper-button-next {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Extra-large devices */
+@media (min-width: 1280px) {
+  .custom-swiper-1 .swiper-button-prev,
+  .custom-swiper-1 .swiper-button-next {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Default Position for Small Devices */
+.custom-swiper-1 .swiper-button-prev {
+  left: 5px;
+}
+
+.custom-swiper-1 .swiper-button-next {
+  right: 5px;
+}
+
+/* Positioning for Medium Devices (min-width: 768px) */
+@media (min-width: 768px) {
+  .custom-swiper-1 .swiper-button-prev {
+    left: 10px;
+  }
+
+  .custom-swiper-1 .swiper-button-next {
+    right: 10px;
+  }
+}
+
+/* Positioning for Large Devices (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .custom-swiper-1 .swiper-button-prev {
+    left: 20px;
+  }
+
+  .custom-swiper-1 .swiper-button-next {
+    right: 20px;
+  }
+}
+
+/* Positioning for Extra Large Devices (min-width: 1280px) */
+@media (min-width: 1280px) {
+  .custom-swiper-1 .swiper-button-prev {
+    left: 30px;
+  }
+
+  .custom-swiper-1 .swiper-button-next {
+    right: 30px;
+  }
+}
+:root {
+  --swiper-navigation-size: 20px;
+}

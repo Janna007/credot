@@ -1,0 +1,30 @@
+.custom-swiper-2 {
+    position: relative; /* Ensure the swiper container is the positioned ancestor */
+    overflow: visible; /* Allow the buttons to overflow the container */
+  }
+
+
+.custom-swiper-2 .swiper-button-prev,
+.custom-swiper-2 .swiper-button-next {
+    position: absolute; /* Ensure the buttons are positioned absolutely relative to the swiper container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center */
+    z-index: 10; /* Higher z-index to stay above other content */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  background-color: #808080; /* Gray background color */
+  border-radius: 100%; /* Makes the button circular */
+  width: 30px;
+  height: 30px;
+}
+
+.custom-swiper-2 .swiper-button-prev {
+    left: -10px;
+  }
+
+  .custom-swiper-2 .swiper-button-next {
+    right: -10px;
+  }
