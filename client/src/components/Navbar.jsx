@@ -6,7 +6,7 @@ import carticon from '../assets/carticon.png'
 function Navbar() {
   return (
     <>
-    <div className='min-h-[90px]  pt-[34px] flex gap-[750px]'>
+    <div className='min-h-[90px]  pt-[34px] flex gap-[750px] overflow-hidden'>
   
         <img src={logo} alt='logo'  className='w-[134px] h-[48px] ml-[180px] '/>
 
