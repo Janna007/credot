@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Register from './pages/Register'
 import Home from './pages/Home'
+import Cart from './pages/Cart'
+import ProductDetails from './pages/ProductDetails'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
         <Route path='/' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
         <Route path='/home' element={<Home/>} />
+        <Route path='/cart' element={<Cart/>} />
+        <Route path="/product/:id" element={<ProductDetails/>} />
       </Routes>
       <Footer/>
     </>

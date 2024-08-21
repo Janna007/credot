@@ -7,8 +7,7 @@
 .custom-swiper-2 .swiper-button-prev,
 .custom-swiper-2 .swiper-button-next {
     position: absolute; /* Ensure the buttons are positioned absolutely relative to the swiper container */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust to center */
+   /* Adjust to center */
     z-index: 10; /* Higher z-index to stay above other content */
   cursor: pointer;
   display: flex;
@@ -22,9 +21,9 @@
 }
 
 .custom-swiper-2 .swiper-button-prev {
-    left: -10px;
+    left: 20px;
   }
 
   .custom-swiper-2 .swiper-button-next {
-    right: -10px;
+    right: 20px;
   }

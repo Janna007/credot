@@ -65,14 +65,15 @@ function Brands() {
 
 {/* brand slide */}
 
-    <div className='flex gap-[20px]  mt-[30px] custom-swiper-2 px-[120px] '>
+    <div className='flex   mt-[30px] custom-swiper-2 '>
         <Swiper
           modules={[Navigation, A11y]}
-          spaceBetween={50}
-          slidesPerView={4}
+          spaceBetween={120}
+          slidesPerView={5}
           navigation
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
+          className='px-[120px]'
         >
          
            {brands.map((brand, index) => (
@@ -91,7 +92,7 @@ function Brands() {
    
      </div>
 
-     <div className=' h-[1px] bg-[#EEEEEE] mt-[120px]  mx-[100px]'>
+     <div className=' h-[1px] bg-[#EEEEEE] mt-[120px]  mx-[100px] mb-[30px]'>
       {/* horizontal line */}
      </div>
 
