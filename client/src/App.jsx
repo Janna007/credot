@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import ProductDetails from './pages/ProductDetails'
 import Success from './components/Success'
+import MyOrder from './pages/MyOrder'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/cart' element={<Cart/>} />
         <Route path="/product/:id" element={<ProductDetails/>} />
         <Route path='/success' element={<Success/>} />
+        <Route path='/my-order' element={<MyOrder/>} />
       </Routes>
       <Footer/>
     </>
