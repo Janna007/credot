@@ -1,4 +1,6 @@
 import React from 'react'
+import phone from '../../assets/phone.png'
+import remove from '../../assets/remove.png'
 
 function Checkout() {
   return (
@@ -14,6 +16,7 @@ function Checkout() {
           {/* table */}
 
             <table className="min-w-full bg-white">
+              {/* head */}
                 <thead className='border-b border-[#E2E2E2]'>
                 <tr>
                     <th className="py-2 px-4 text-left w-[350px] text-[#000000] font_poppins font-bold text-[12px] leading-[48px]">PRODUCT</th>
@@ -23,11 +26,22 @@ function Checkout() {
                 </tr>
                 </thead>
 
-        
+              {/* body */}
                 <tbody className='border-b border-[#E2E2E2]'>
-                {/* Example Row */}
+
+                {/*Row */}
                 <tr className='h-[100px]' >
-                    <td className="py-2 px-4  text-[#000000] font_poppins font-bold text-[12px] leading-[48px] ">iPhone 14 Pro Max</td>
+                    
+                    <td className='py-2 px-4 '>
+                      <div className='flex gap-[6px] relative  items-center'>
+                        <img src={remove} alt='remove' className='absolute left-[60px] top-[-10px]'/>
+                        <div className='bg-[#F9F9F9] w-[80px] h-[80px] flex justify-center items-center'>
+                        <img src={phone} alt='phone' className='w-[40px] h-[60px]' />
+                        </div>
+                      
+                        <p className=' text-[#000000] font_poppins font-bold text-[12px] leading-[48px] '>iPhone 14 Pro Max</p>
+                      </div>
+                    </td>
                     <td className="py-2 px-4  text-[#000000] font_poppins font-bold text-[12px] leading-[48px] ">INR 999.00</td>
                     <td className="py-2 px-4 ">
                     <div className='flex  w-[102px] h-[52px]'>
@@ -39,8 +53,10 @@ function Checkout() {
                     </td>
                     <td className="py-2 px-4   text-[#000000] font_poppins font-bold text-[12px] leading-[48px]">INR 999.00</td>
                 </tr>
-                {/* Add more rows as needed */}
+                
                 </tbody>
+
+
             </table>
 
             {/* coupon */}
