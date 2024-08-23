@@ -5,3 +5,10 @@
 .font_poppins{
   font-family: "Poppins", sans-serif;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+.font_PlusJakartaSans{
+  font-family: "Plus Jakarta Sans", sans-serif;
+}

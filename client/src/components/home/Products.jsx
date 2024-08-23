@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 import phone from '../../assets/phone.png'
+import hot from '../../assets/hot.png'
+import add from '../../assets/add.png'
 
 
 
@@ -32,13 +34,18 @@ const combinedClasses = `${cardStyles} ${additionalClasses}`;
           <div className=''>
             <img src={phone} /> 
           </div>
-          <div>
-            <h1>jhbchjsbc</h1>
-            <p>hbcjh</p>
-            <h1>jhbchjsbc</h1>
-            <h1>jhbchjsbc</h1>
-            <p>hbcjh</p>
-            <h1>jhbchjsbc</h1>
+          <div className='bg-pink-600'>
+            <p>AUDIO AMPLIFIER, HDMI PROJECTORS</p>
+            <h1>iPhone 14 Pro max 256GB - Deep Purple</h1>
+            <div className='flex gap-[15px]'>
+                        <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
+                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+                        <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
+                      </div>
+
+            <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
+                  <button className='text-white font_poppins font-bold text-[14px] leading-[34px]'>ADD TO CART</button>
+                </div>
            
           </div>
           
@@ -154,17 +161,72 @@ function Products() {
     </div> */}
 
    <div className="flex justify-center 2xl:ml-[150px]   mx-[100px] mt-[40px]">
+
       {/* First card */}
+
+
       {firstProduct && (
         <div className="flex">
-          <ProductCard product={firstProduct} isFirst={true} />
+
+          {/* card */}
+           <div className='bg-white p-4 w-[300px] h-[700px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col'>
+        <div className='w-full h-1/2  flex justify-center items-center flex-col'>
+          <div className=''>
+            <img src={phone} /> 
+          </div>
+          <div className=' flex justify-center items-center flex-col gap-[30px] mt-[40px] '>
+            <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[12px] leading-[15px] text-center ' style={{letterSpacing:"1px"}}>AUDIO AMPLIFIER, HDMI PROJECTORS</p>
+            <h1 className='text-[#000000] font_poppins font-medium text-[18px] leading-[29px] text-center'>iPhone 14 Pro max 256GB - Deep Purple</h1>
+            <div className='flex gap-[15px]'>
+                        <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
+                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+                        <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
+                      </div>
+            <div className='flex justify-center items-center w-[210px] h-[52px] bg-[#1AA5C3] rounded-[1px]'>
+                  <button className='text-white font_poppins font-bold text-[14px] leading-[34px]'>ADD TO CART</button>
+                </div>
+          </div>
+        </div>   
+      </div>
         </div>
       )}
+
+
+
+
 
       {/* Remaining cards  */}
       <div className="flex flex-wrap">
         {otherProducts.map((product) => (
-          <ProductCard key={product.id} product={product} isFirst={false} />
+
+          // card
+
+           <div className='bg-white p-4 w-[250px] h-[350px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col '>
+           <div className=' flex justify-center items-center flex-col relative'>
+            <img src={hot} alt='hot' className='absolute top-[-10px] left-[-4px]'/>
+            
+               <img src={phone} className='h-[150px]' /> 
+               <img src={add}  alt='add' className='absolute right-0 w-[20px] h-[20px]'  />
+            
+
+
+             <div className='flex flex-col gap-[25px] mt-[30px]'>
+               <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] leading-[15px]' style={{letterSpacing:"1px"}}>SMART PHONE</p>
+               <h1 className='text-[#000000] font_poppins font-medium text-[14px] leading-[23px] '>iPhone 14 Pro max 256GB - Deep Purple</h1>
+               <div className='flex gap-[15px]'>
+                           <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
+                           <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+                           <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
+                         </div>
+              
+             </div>
+             
+           </div>
+            
+        
+         
+        
+         </div>
         ))}
       </div>
     </div>
