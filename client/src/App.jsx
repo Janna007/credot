@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import ProductDetails from './pages/ProductDetails'
+import Success from './components/Success'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/home' element={<Home/>} />
         <Route path='/cart' element={<Cart/>} />
         <Route path="/product/:id" element={<ProductDetails/>} />
+        <Route path='/success' element={<Success/>} />
       </Routes>
       <Footer/>
     </>
