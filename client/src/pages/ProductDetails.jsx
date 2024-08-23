@@ -77,23 +77,23 @@ function ProductDetails() {
 
   return (
    <>
-      <div className='min-h-[800px]'>
-          <div className='min-h-500px  px-[60px] py-[50px]'>
-               <div className='flex gap-[40px]'>
+      <div className='min-h-[800px] overflow-hidden'>
+          <div className='min-h-500px  xl:px-[60px] lg:px-[40px] py-[50px]'>
+               <div className='flex lg:flex-row flex-col gap-[40px]'>
 
 
-                     <div >
+                     <div className=' flex justify-center items-center flex-col' >
                       <div className='bg-[#F9F9F9] w-[515px] h-[567px] flex justify-center items-center'>
-                      <img src={phone} alt='phone' className='w-[224px]  h-[300px]' />
+                      <img src={phone} alt='phone' className='lg:w-[224px] md:w-[200px] sm:w-[150px]  h-[300px]' />
                       </div>
-                      <div className='mt-[30px] flex gap-[30px]'>
-                       <div className='bg-[#F9F9F9] w-[135px] h-[135px] flex justify-center items-center'>
+                      <div className='mt-[30px] flex gap-1  md:gap-[30px] px-[8px] '>
+                       <div className='bg-[#F9F9F9] md:w-[135px] w-[100px] h-[135px] flex justify-center items-center'>
                        <img src={phone} alt='phone' className='w-58px]  h-[79px]' />
                        </div>
-                       <div className='bg-[#F9F9F9] w-[135px] h-[135px] flex justify-center items-center'>
+                       <div className='bg-[#F9F9F9] md:w-[135px] w-[100px] h-[135px] flex justify-center items-center'>
                        <img src={phone} alt='phone' className='w-58px]  h-[79px]' />
                        </div>
-                       <div className='bg-[#F9F9F9] w-[135px] h-[135px] flex justify-center items-center'>
+                       <div className='bg-[#F9F9F9] md:w-[135px] w-[100px] h-[135px] flex justify-center items-center'>
                        <img src={phone} alt='phone' className='w-58px]  h-[79px]' />
                        </div>
                       </div>
@@ -102,7 +102,7 @@ function ProductDetails() {
                      </div>
 
 
-                     <div className='flex flex-col gap-[20px] '>
+                     <div className='flex flex-col gap-[20px] lg:ml-0 md:ml-[30px] ml-[20px] '>
                       <h1 className='font_poppins font-medium text-[28px] leading-[33.43px] text-[#222529]'>iPhone 12 Pro max 256GB Deep Purple</h1>
                       <div className='flex gap-[20px]'>
                         <p>⭐⭐⭐⭐⭐</p>
@@ -119,7 +119,7 @@ function ProductDetails() {
 
                       <p className='font_poppins font-bold text-[14px] leading-[22px] text-[#000000]'>clour:<spna className='font_poppins font-semibold text-[14px] leading-[22px] text-[#000000]'>silver</spna></p>
 
-                      <div className='flex gap-[20px]'>
+                      <div className='flex md:gap-[20px] sm:gap-[10px] gap-[4px]'>
                             <img src={color1} alt="clr1"  />
                             <img src={color2} alt="clr2" />
                             <img src={color3} alt="clr3" />
@@ -129,17 +129,17 @@ function ProductDetails() {
 
                       <p className='font_poppins font-bold text-[14px] leading-[22px] text-[#000000]'>internal memory</p>
 
-                      <div className='flex gap-[20px]'>
-                        <div className='border border-1 border-[#DCDCDC] w-[84px] h-[41px] flex justify-center items-center'>
+                      <div className='flex md:gap-[20px] gap-[10px]'>
+                        <div className='border border-1 border-[#DCDCDC] sm:w-[84px] w-[70px] h-[41px] flex justify-center items-center'>
                           256GB
                         </div>
-                        <div  className='border border-1 border-[#DCDCDC] w-[84px] h-[41px] flex justify-center items-center bg-black text-white'>
+                        <div  className='border border-1 border-[#DCDCDC] sm:w-[84px] w-[70px] h-[41px] flex justify-center items-center bg-black text-white'>
                           500GB
                         </div>
-                        <div  className='border border-1 border-[#DCDCDC] w-[84px] h-[41px] flex justify-center items-center'>
+                        <div  className='border border-1 border-[#DCDCDC] sm:w-[84px] w-[70px] h-[41px] flex justify-center items-center'>
                           1TB
                         </div>
-                        <div  className='border border-1 border-[#DCDCDC] w-[84px] h-[41px] flex justify-center items-center'>
+                        <div  className='border border-1 border-[#DCDCDC] sm:w-[84px] w-[70px] h-[41px] flex justify-center items-center'>
                           128GB
                         </div>
                       </div>
@@ -157,6 +157,8 @@ function ProductDetails() {
                             <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'>1</div>
                             <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'>-</div>
                           </div>
+
+                          
                           <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
                             <button className='text-white font_poppins font-bold text-[14px] leading-[34px]'>ADD TO CART</button>
                           </div>
@@ -171,6 +173,8 @@ function ProductDetails() {
 
                       </div>
                      </div>
+
+
                </div>
           </div>
       </div>

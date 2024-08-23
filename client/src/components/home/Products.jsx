@@ -2,6 +2,7 @@ import React from 'react'
 import phone from '../../assets/phone.png'
 import hot from '../../assets/hot.png'
 import add from '../../assets/add.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -196,8 +197,8 @@ function Products() {
         {otherProducts.map((product) => (
 
           // card
-
-           <div className='bg-white p-4 w-[250px] h-[350px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col '>
+         <Link to={`/product/${product.id}`}>
+         <div className='bg-white p-4 w-[250px] h-[350px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col '>
            <div className=' flex justify-center items-center flex-col relative'>
             <img src={hot} alt='hot' className='absolute top-[-10px] left-[-4px]'/>
             
@@ -222,7 +223,9 @@ function Products() {
         
          
         
-         </div>
+         </div></Link>
+           
+
         ))}
       </div>
 
