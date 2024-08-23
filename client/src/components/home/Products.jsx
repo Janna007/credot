@@ -1,67 +1,65 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-
 import phone from '../../assets/phone.png'
 import hot from '../../assets/hot.png'
 import add from '../../assets/add.png'
 
 
 
-const ProductCard=({product,isFirst})=>{
-  const cardStyles = isFirst
-  ? "bg-white p-4 w-[300px] h-[850px] border border-[#B9B9B9] border-[1px] "
-  : "bg-white p-4 w-[250px] h-[425px] border border-[#B9B9B9] border-[1px] ";
+// const ProductCard=({product,isFirst})=>{
+//   const cardStyles = isFirst
+//   ? "bg-white p-4 w-[300px] h-[850px] border border-[#B9B9B9] border-[1px] "
+//   : "bg-white p-4 w-[250px] h-[425px] border border-[#B9B9B9] border-[1px] ";
 
 
-const additionalClasses = "flex justify-center items-center flex-col";
+// const additionalClasses = "flex justify-center items-center flex-col";
 
 
-const combinedClasses = `${cardStyles} ${additionalClasses}`;
+// const combinedClasses = `${cardStyles} ${additionalClasses}`;
 
 
-  const textStyles = isFirst
-    ? "text-[26px] font-medium p-2"
-    : "text-base font-medium";
+//   const textStyles = isFirst
+//     ? "text-[26px] font-medium p-2"
+//     : "text-base font-medium";
  
-    const imageDiv=isFirst
-    ?" w-full h-1/2  flex justify-center items-center flex-col"
-    :" w-[150px] h-1/3   flex justify-center items-center flex-col"
-      return(
-       <>
+//     const imageDiv=isFirst
+//     ?" w-full h-1/2  flex justify-center items-center flex-col"
+//     :" w-[150px] h-1/3   flex justify-center items-center flex-col"
+//       return(
+//        <>
 
-      <div className={combinedClasses}>
-        <div className={imageDiv}>
-          <div className=''>
-            <img src={phone} /> 
-          </div>
-          <div className='bg-pink-600'>
-            <p>AUDIO AMPLIFIER, HDMI PROJECTORS</p>
-            <h1>iPhone 14 Pro max 256GB - Deep Purple</h1>
-            <div className='flex gap-[15px]'>
-                        <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
-                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
-                        <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
-                      </div>
+//       <div className={combinedClasses}>
+//         <div className={imageDiv}>
+//           <div className=''>
+//             <img src={phone} /> 
+//           </div>
+//           <div className='bg-pink-600'>
+//             <p>AUDIO AMPLIFIER, HDMI PROJECTORS</p>
+//             <h1>iPhone 14 Pro max 256GB - Deep Purple</h1>
+//             <div className='flex gap-[15px]'>
+//                         <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
+//                         <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+//                         <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
+//                       </div>
 
-            <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
-                  <button className='text-white font_poppins font-bold text-[14px] leading-[34px]'>ADD TO CART</button>
-                </div>
+//             <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
+//                   <button className='text-white font_poppins font-bold text-[14px] leading-[34px]'>ADD TO CART</button>
+//                 </div>
            
-          </div>
+//           </div>
           
-        </div>
+//         </div>
          
      
       
      
-      </div>
+//       </div>
 
-       </>
+//        </>
       
   
-      )
+//       )
 
-}
+// }
 
 
 function Products() {
@@ -160,7 +158,7 @@ function Products() {
       ))}
     </div> */}
 
-   <div className="flex justify-center 2xl:ml-[150px]   mx-[100px] mt-[40px]">
+   <div className="flex justify-center 2xl:ml-[150px] xlg:mx-[80px]  xl:mx-[100px] mt-[40px]">
 
       {/* First card */}
 
@@ -169,11 +167,11 @@ function Products() {
         <div className="flex">
 
           {/* card */}
-           <div className='bg-white p-4 w-[300px] h-[700px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col'>
+           <div className='bg-white p-4 xl:w-[300px]  xlg:w-[450px] xl:h-[700px]  xlg:h-[1050px] border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col'>
         <div className='w-full h-1/2  flex justify-center items-center flex-col'>
-          <div className=''>
-            <img src={phone} /> 
-          </div>
+          
+            <img src={phone}  /> 
+        
           <div className=' flex justify-center items-center flex-col gap-[30px] mt-[40px] '>
             <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[12px] leading-[15px] text-center ' style={{letterSpacing:"1px"}}>AUDIO AMPLIFIER, HDMI PROJECTORS</p>
             <h1 className='text-[#000000] font_poppins font-medium text-[18px] leading-[29px] text-center'>iPhone 14 Pro max 256GB - Deep Purple</h1>
@@ -190,8 +188,6 @@ function Products() {
       </div>
         </div>
       )}
-
-
 
 
 
@@ -229,6 +225,9 @@ function Products() {
          </div>
         ))}
       </div>
+
+
+      
     </div>
 
 
