@@ -10,6 +10,7 @@ import Cart from './pages/Cart'
 import ProductDetails from './pages/ProductDetails'
 import Success from './components/Success'
 import MyOrder from './pages/MyOrder'
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
 
@@ -20,11 +21,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
-        <Route path='/home' element={<Home/>} />
-        <Route path='/cart' element={<Cart/>} />
-        <Route path="/product/:id" element={<ProductDetails/>} />
-        <Route path='/success' element={<Success/>} />
-        <Route path='/my-order' element={<MyOrder/>} />
+        <Route path='/home' element={<ProtectedRoute element={<Home />} />} />
+        <Route path='/cart' element={<ProtectedRoute element={<Cart />} />} />
+        <Route path='/product/:id' element={<ProtectedRoute element={<ProductDetails />} />} />
+        <Route path='/success' element={<ProtectedRoute element={<Success />} />} />
+        <Route path='/my-order' element={<ProtectedRoute element={<MyOrder />} />} />
       </Routes>
       <Footer/>
     </>

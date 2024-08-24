@@ -41,7 +41,7 @@ function LoginForm() {
 
       if(response.data.statusCode===200){
         setUserData(user)
-        dispatch(login(userData))
+        dispatch(login(user))
         localStorage.setItem('token', accessToken);
         navigate("/home")
       }

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import  api from '../api/api.js'
 import phone from '../assets/phone.png'
 import color1 from '../assets/colour1.png'
 import color2 from '../assets/colour2.png'
@@ -67,13 +68,27 @@ function ProductDetails() {
     },
   ];
 
-  const { id } = useParams();
-  const product = products.find((p) => p.id === parseInt(id, 10));
+  const[error,setError]=useState(null)
+  const [product,setProduct]=useState({})
 
-  if (!product) {
-    return <p>Product not found</p>;
+  const { id } = useParams();
+ 
+
+  const fetchProduct= async()=>{
+    try {
+      const response=await api.get(`/products/getproduct/${id}`)
+      console.log(response.data.data)
+      setProduct(response.data.data)
+      setError("")
+    } catch (error) {
+      console.error('Error:', error);
+      setError(error.response.data.message)
+    }
   }
 
+  useEffect(()=>{
+      fetchProduct()
+  },[])
 
   return (
    <>
@@ -103,7 +118,7 @@ function ProductDetails() {
 
 
                      <div className='flex flex-col gap-[20px] lg:ml-0 md:ml-[30px] ml-[20px] '>
-                      <h1 className='font_poppins font-medium text-[28px] leading-[33.43px] text-[#222529]'>iPhone 12 Pro max 256GB Deep Purple</h1>
+                      <h1 className='font_poppins font-medium text-[28px] leading-[33.43px] text-[#222529]'>{product.name}</h1>
                       <div className='flex gap-[20px]'>
                         <p>⭐⭐⭐⭐⭐</p>
                         <p className='font_poppins font-normal text-[12px] leading-[26px] text-[#999999]' style={{letterSpacing:'-1%'}}>( There are no reviews yet )</p>
@@ -111,11 +126,11 @@ function ProductDetails() {
 
                       <div className='flex gap-[15px]'>
                         <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
-                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>{product.price}</p>
                         <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
                       </div>
 
-                      <p className='font_poppins font-normal text-[14px] leading-[26px] text-[#777777]'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
+                      <p className='font_poppins font-normal text-[14px] leading-[26px] text-[#777777]'>{product.description} </p>
 
                       <p className='font_poppins font-bold text-[14px] leading-[22px] text-[#000000]'>clour:<spna className='font_poppins font-semibold text-[14px] leading-[22px] text-[#000000]'>silver</spna></p>
 

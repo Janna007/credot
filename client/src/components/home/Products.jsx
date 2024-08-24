@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import phone from '../../assets/phone.png'
 import hot from '../../assets/hot.png'
 import add from '../../assets/add.png'
 import { Link } from 'react-router-dom';
+import api from '../../api/api';
 
 
 
@@ -64,65 +65,89 @@ import { Link } from 'react-router-dom';
 
 
 function Products() {
-  const products = [
-    {
-      id: 1,
-      name: 'Smartphone X1',
-      description: 'The latest smartphone with cutting-edge features and sleek design. Equipped with a high-resolution camera and fast processor.',
-      price: 799.99,
-      category: 'Electronics',
-      image: phone
-    },
-    {
-      id: 2,
-      name: 'Wireless Headphones',
-      description: 'Comfortable wireless headphones with noise-canceling technology and long battery life. Perfect for music lovers on the go.',
-      price: 149.99,
-      category: 'Electronics',
-      image:phone
-    },
-    {
-      id: 3,
-      name: 'Leather Sofa',
-      description: 'Elegant leather sofa with plush cushions and durable construction. A stylish addition to any living room.',
-      price: 999.99,
-      category: 'Furniture',
-      image: phone
-    },
-    {
-      id: 4,
-      name: 'Wooden Dining Table',
-      description: 'Solid wooden dining table with a modern design. Seats up to six people comfortably and adds a touch of sophistication to your dining area.',
-      price: 499.99,
-      category: 'Furniture',
-      image: phone
-    },
-    {
-      id: 5,
-      name: 'Men\'s Running Shoes',
-      description: 'High-performance running shoes designed for comfort and durability. Ideal for both casual and serious runners.',
-      price: 89.99,
-      category: 'Clothing',
-      image: 'https://via.placeholder.com/300x200?text=Men%27s+Running+Shoes'
-    },
-    {
-      id: 6,
-      name: 'Women\'s Summer Dress',
-      description: 'Light and breezy summer dress perfect for warm weather. Features a vibrant floral pattern and comfortable fit.',
-      price: 59.99,
-      category: 'Clothing',
-      image: 'https://via.placeholder.com/300x200?text=Women%27s+Summer+Dress'
-    },
-    {
-      id: 7,
-      name: 'Organic Green Tea',
-      description: 'Premium organic green tea leaves, rich in antioxidants and flavor. Ideal for a refreshing and healthy beverage.',
-      price: 12.99,
-      category: 'Grocery',
-      image: 'https://via.placeholder.com/300x200?text=Organic+Green+Tea'
-    },
+  // const products = [
+  //   {
+  //     id: 1,
+  //     name: 'Smartphone X1',
+  //     description: 'The latest smartphone with cutting-edge features and sleek design. Equipped with a high-resolution camera and fast processor.',
+  //     price: 799.99,
+  //     category: 'Electronics',
+  //     image: phone
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Wireless Headphones',
+  //     description: 'Comfortable wireless headphones with noise-canceling technology and long battery life. Perfect for music lovers on the go.',
+  //     price: 149.99,
+  //     category: 'Electronics',
+  //     image:phone
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Leather Sofa',
+  //     description: 'Elegant leather sofa with plush cushions and durable construction. A stylish addition to any living room.',
+  //     price: 999.99,
+  //     category: 'Furniture',
+  //     image: phone
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Wooden Dining Table',
+  //     description: 'Solid wooden dining table with a modern design. Seats up to six people comfortably and adds a touch of sophistication to your dining area.',
+  //     price: 499.99,
+  //     category: 'Furniture',
+  //     image: phone
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Men\'s Running Shoes',
+  //     description: 'High-performance running shoes designed for comfort and durability. Ideal for both casual and serious runners.',
+  //     price: 89.99,
+  //     category: 'Clothing',
+  //     image: 'https://via.placeholder.com/300x200?text=Men%27s+Running+Shoes'
+  //   },
+  //   {
+  //     id: 6,
+  //     name: 'Women\'s Summer Dress',
+  //     description: 'Light and breezy summer dress perfect for warm weather. Features a vibrant floral pattern and comfortable fit.',
+  //     price: 59.99,
+  //     category: 'Clothing',
+  //     image: 'https://via.placeholder.com/300x200?text=Women%27s+Summer+Dress'
+  //   },
+  //   {
+  //     id: 7,
+  //     name: 'Organic Green Tea',
+  //     description: 'Premium organic green tea leaves, rich in antioxidants and flavor. Ideal for a refreshing and healthy beverage.',
+  //     price: 12.99,
+  //     category: 'Grocery',
+  //     image: 'https://via.placeholder.com/300x200?text=Organic+Green+Tea'
+  //   },
     
-  ];
+  // ];
+
+
+
+  const[products,setProducts]=useState([])
+  const [error,setError]=useState()
+
+  const fetchProducts=async()=>{
+  try {
+      const response=await api.get("/products/getproducts")
+      console.log(response.data.data)
+
+      setProducts(response.data.data)
+
+      setError("")
+
+  } catch (error) {
+    console.error('Error:', error);
+    setError(error.response.data.message)
+  }
+  }
+
+  useEffect(()=>{
+    fetchProducts()
+  },[])
   
   const [firstProduct, ...otherProducts] = products;
 
@@ -141,44 +166,26 @@ function Products() {
 
 
 
-{/* 
-     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-      {products.map((product, index) => (
-        <Link
-        key={product.id}
-        to={`/product/${product.id}`}
-        className="border p-4 rounded-lg hover:shadow-lg"
-        >
-          <h2 className="text-xl font-semibold">{product.name}</h2>
-          <p className="text-gray-600 mt-2">{product.description}</p>
-          <p className="text-lg font-bold mt-2">${product.price.toFixed(2)}</p>
-          <p className="text-sm text-gray-500 mt-2">{product.category}</p>
-          <button>add to cart</button>
-       </Link>
-        
-      ))}
-    </div> */}
-
    <div className="flex justify-center 2xl:ml-[150px] xlg:mx-[80px]  xl:mx-[100px] mt-[40px]">
 
       {/* First card */}
-
 
       {firstProduct && (
         <div className="flex">
 
           {/* card */}
-           <div className='bg-white p-4 xl:w-[300px]  xlg:w-[450px] xl:h-[700px]  xlg:h-[1050px] border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col'>
+          <Link  to={`/product/${firstProduct._id}`}>
+          <div className='bg-white p-4 xl:w-[300px]  xlg:w-[450px] xl:h-[700px]  xlg:h-[1050px] border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col'>
         <div className='w-full h-1/2  flex justify-center items-center flex-col'>
           
             <img src={phone}  /> 
         
           <div className=' flex justify-center items-center flex-col gap-[30px] mt-[40px] '>
-            <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[12px] leading-[15px] text-center ' style={{letterSpacing:"1px"}}>AUDIO AMPLIFIER, HDMI PROJECTORS</p>
-            <h1 className='text-[#000000] font_poppins font-medium text-[18px] leading-[29px] text-center'>iPhone 14 Pro max 256GB - Deep Purple</h1>
+            <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[12px] leading-[15px] text-center uppercase ' style={{letterSpacing:"1px"}}>{firstProduct.category}</p>
+            <h1 className='text-[#000000] font_poppins font-medium text-[18px] leading-[29px] text-center'>{firstProduct.name}</h1>
             <div className='flex gap-[15px]'>
                         <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
-                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+                        <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>{firstProduct.price}</p>
                         <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
                       </div>
             <div className='flex justify-center items-center w-[210px] h-[52px] bg-[#1AA5C3] rounded-[1px]'>
@@ -187,6 +194,8 @@ function Products() {
           </div>
         </div>   
       </div>
+          </Link>
+          
         </div>
       )}
 
@@ -197,7 +206,7 @@ function Products() {
         {otherProducts.map((product) => (
 
           // card
-         <Link to={`/product/${product.id}`}>
+         <Link to={`/product/${product._id}`}>
          <div className='bg-white p-4 w-[250px] h-[350px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col '>
            <div className=' flex justify-center items-center flex-col relative'>
             <img src={hot} alt='hot' className='absolute top-[-10px] left-[-4px]'/>
@@ -208,11 +217,11 @@ function Products() {
 
 
              <div className='flex flex-col gap-[25px] mt-[30px]'>
-               <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] leading-[15px]' style={{letterSpacing:"1px"}}>SMART PHONE</p>
-               <h1 className='text-[#000000] font_poppins font-medium text-[14px] leading-[23px] '>iPhone 14 Pro max 256GB - Deep Purple</h1>
+               <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] leading-[15px] uppercase' style={{letterSpacing:"1px"}}> {product.category}</p>
+               <h1 className='text-[#000000] font_poppins font-medium text-[14px] leading-[23px] '>{product.name}</h1>
                <div className='flex gap-[15px]'>
                            <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
-                           <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>4999.00</p>
+                           <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>{product.price}</p>
                            <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
                          </div>
               
@@ -228,11 +237,8 @@ function Products() {
 
         ))}
       </div>
-
-
       
     </div>
-
 
     </div>
 
