@@ -11,6 +11,7 @@ import ProductDetails from './pages/ProductDetails'
 import Success from './components/Success'
 import MyOrder from './pages/MyOrder'
 import ProtectedRoute from './ProtectedRoute';
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
         <Route path='/product/:id' element={<ProtectedRoute element={<ProductDetails />} />} />
         <Route path='/success' element={<ProtectedRoute element={<Success />} />} />
         <Route path='/my-order' element={<ProtectedRoute element={<MyOrder />} />} />
+        <Route path='/dashboard' element={<ProtectedRoute element={<Dashboard />} adminOnly={true} />} />
+        
       </Routes>
       <Footer/>
     </>

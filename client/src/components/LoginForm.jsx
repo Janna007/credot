@@ -43,7 +43,12 @@ function LoginForm() {
         setUserData(user)
         dispatch(login(user))
         localStorage.setItem('token', accessToken);
-        navigate("/home")
+        if(user.isAdmin){
+          navigate("/dashboard")
+        }else{
+          navigate("/home")
+        }
+        
       }
 
         setError("")
