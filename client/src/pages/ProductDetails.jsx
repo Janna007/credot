@@ -9,69 +9,31 @@ import color4 from '../assets/colour4.png'
 import color5 from '../assets/colour5.png'
 
 function ProductDetails() {
-  const products = [
-    {
-      id:1,
-      name: 'Smartphone X1',
-      description: 'The latest smartphone with cutting-edge features and sleek design. Equipped with a high-resolution camera and fast processor.',
-      price: 799.99,
-      category: 'Electronics',
-    },
-    {
-      id:2,
-      name: 'Wireless Headphones',
-      description: 'Comfortable wireless headphones with noise-canceling technology and long battery life. Perfect for music lovers on the go.',
-      price: 149.99,
-      category: 'Electronics',
-    },
-    {
-      id:3,
-      name: 'Leather Sofa',
-      description: 'Elegant leather sofa with plush cushions and durable construction. A stylish addition to any living room.',
-      price: 999.99,
-      category: 'Furniture',
-    },
-    {
-      id:4,
-      name: 'Wooden Dining Table',
-      description: 'Solid wooden dining table with a modern design. Seats up to six people comfortably and adds a touch of sophistication to your dining area.',
-      price: 499.99,
-      category: 'Furniture',
-    },
-    {
-      id:5,
-      name: 'Men\'s Running Shoes',
-      description: 'High-performance running shoes designed for comfort and durability. Ideal for both casual and serious runners.',
-      price: 89.99,
-      category: 'Clothing',
-    },
-    {
-      id:6,
-      name: 'Women\'s Summer Dress',
-      description: 'Light and breezy summer dress perfect for warm weather. Features a vibrant floral pattern and comfortable fit.',
-      price: 59.99,
-      category: 'Clothing',
-    },
-    {
-      id:7,
-      name: 'Organic Green Tea',
-      description: 'Premium organic green tea leaves, rich in antioxidants and flavor. Ideal for a refreshing and healthy beverage.',
-      price: 12.99,
-      category: 'Grocery',
-    },
-    {
-      id:8,
-      name: 'Artisan Bread',
-      description: 'Freshly baked artisan bread with a crispy crust and soft, flavorful interior. Perfect for sandwiches or as a side.',
-      price: 4.99,
-      category: 'Grocery',
-    },
-  ];
+
+   const [quantity, setQuantity] = useState(1);
+
+ 
+   const increaseQuantity = () => {
+     setQuantity(prevQuantity => prevQuantity + 1);
+   };
+ 
+   
+   const decreaseQuantity = () => {
+     setQuantity(prevQuantity => {
+       // Prevent quantity from going below 1
+       if (prevQuantity > 1) {
+         return prevQuantity - 1;
+       } else {
+         return 1;
+       }
+     });
+   };
 
   const[error,setError]=useState(null)
   const [product,setProduct]=useState({})
 
   const { id } = useParams();
+  console.log(id)
  
 
   const fetchProduct= async()=>{
@@ -89,6 +51,15 @@ function ProductDetails() {
   useEffect(()=>{
       fetchProduct()
   },[])
+
+  const handleSubmit=async()=>{
+     try {
+       const response=await api.post("/cart/add",{productId:id,quantity})
+       console.log(response)
+     } catch (error) {
+      console.error('Error:', error);
+     }
+  }
 
   return (
    <>
@@ -168,14 +139,14 @@ function ProductDetails() {
 
                         <div className='flex gap-[60px] mt-[20px]' >
                           <div className='flex  w-[102px] h-[52px]'>
-                            <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'>+</div>
-                            <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'>1</div>
-                            <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'>-</div>
+                            <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'  onClick={increaseQuantity}>+</div>
+                            <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'>{quantity}</div>
+                            <div className='w-[34px] h-[52px] flex justify-center items-center border border-1 border-[#E7E7E7]'  onClick={decreaseQuantity}>-</div>
                           </div>
 
                           
                           <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
-                            <button className='text-white font_poppins font-bold text-[14px] leading-[34px]'>ADD TO CART</button>
+                            <button className='text-white font_poppins font-bold text-[14px] leading-[34px]' onClick={()=>{handleSubmit()}}>ADD TO CART</button>
                           </div>
 
 
