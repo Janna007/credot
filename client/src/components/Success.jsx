@@ -1,6 +1,7 @@
 import React from 'react'
 import success from '../assets/success.png'
 import '.././App.css'
+import { Link } from 'react-router-dom'
 
 function Success() {
   return (
@@ -13,6 +14,10 @@ function Success() {
           </div>
           <div>
             <p className='text-[#777777] font_poppins text-[13px] leading-[13px] font-normal text-center'>Lorem ipsum dolor sit amet consectetur. Sapien ut libero sed lacinia egestas placera</p>
+          </div>
+
+          <div>
+            <p className='text-[#222529] font_poppins text-[10px] leading-[13px] font-normal text-center'>Continue Shopping?<Link to={"/home"}>Go Home!!</Link></p>
           </div>
     </div>
   )
