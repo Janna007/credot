@@ -19,7 +19,7 @@ import './Header.css'
 
 function Header() {
   return (
-    <div className='min-h-[180px]  overflow-hidden custom-swiper-1 bg-red-900'>
+    <div className='min-h-[180px]  overflow-hidden custom-swiper-1 '>
        <Swiper
       // install Swiper modules
       modules={[Navigation, A11y]}
