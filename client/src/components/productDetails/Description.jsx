@@ -18,7 +18,7 @@ function Description() {
         </p>
         <p
           onClick={() => handleTabClick('specifications')}
-          className={`cursor-pointer text-lg md:text-xl font-normal font_poppins${activeTab === 'specifications' ? 'border-b-2 border-black' : 'border-b-2 border-transparent'}`}
+          className={`cursor-pointer text-lg md:text-xl font-normal font_poppins ${activeTab === 'specifications' ? 'border-b-2 border-black' : 'border-b-2 border-transparent'}`}
         >
           Specifications
         </p>

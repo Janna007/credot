@@ -66,12 +66,12 @@ function ProductDetails() {
    <>
       <div className='min-h-[800px] overflow-hidden'>
           <div className='min-h-500px  xl:px-[60px] lg:px-[40px] py-[50px]'>
-               <div className='flex lg:flex-row flex-col gap-[40px]'>
+               <div className='flex lg:flex-row flex-col gap-[50px] 2xl:gap-[200px] 3xl:gap-[300px]'>
 
 
                      <div className=' flex justify-center items-center flex-col' >
-                      <div className='bg-[#F9F9F9] w-[515px] h-[567px] flex justify-center items-center'>
-                      <img src={phone} alt='phone' className='lg:w-[224px] md:w-[200px] sm:w-[150px]  h-[300px]' />
+                      <div className='bg-[#F9F9F9] 3xl:w-[700px] 2xl:w-[600px] w-[515px] h-[567px] flex justify-center items-center'>
+                      <img src={phone} alt='phone' className=' lg:w-[224px] md:w-[200px] sm:w-[150px]  h-[300px]' />
                       </div>
                       <div className='mt-[30px] flex gap-1  md:gap-[30px] px-[8px] '>
                        <div className='bg-[#F9F9F9] md:w-[135px] w-[100px] h-[135px] flex justify-center items-center'>
@@ -165,6 +165,8 @@ function ProductDetails() {
                </div>
           </div>
       </div>
+
+
 
       <div>
         <Description />
