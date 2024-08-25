@@ -66,6 +66,11 @@ function MyOrder() {
    fetchOrders()
  },[])
    
+ const handleUpdateOrderStatus = (orderId) => {
+  // Logic to update order status, possibly opening a modal or directly updating via an API call
+  console.log("Update order status for:", orderId);
+};
+
   return (
 
     <>
@@ -97,9 +102,10 @@ function MyOrder() {
             className="order-image w-full md:w-20 h-auto object-cover rounded-md mb-4 md:mb-0 md:mr-4"
           />
           <div>
-            <h3 className="product-name text-xl font-semibold mb-2 font_poppins">
+            <h3 className="product-name text-md font-semibold mb-2 font_poppins">
               {productItem.product.name}
             </h3>
+            
             <p className="product-description text-[#777777] mb-2 font_poppins">
               INR {productItem.product.price}
             </p>
@@ -109,6 +115,8 @@ function MyOrder() {
           </div>
         </div>
       ))}
+     
+
       <p className="total-price font-bold text-lg font_poppins text-right mt-4">
         Total Price: INR {order.totalPrice}
       </p>
