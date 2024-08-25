@@ -102,13 +102,13 @@ function Checkout() {
       {cartItems.length===0 ? (
          <p>No items in your cart. Add some products to proceed.</p>
       ):(
-<div className='grid lg:grid-cols-12'>
+<div className='grid lg:grid-cols-12 2xl:space-x-[100px] 3xl:space-x-[150px] 4xl:space-x-[200px]'>
 
 {/* 1st div */}
 
 <div className='lg:col-span-7 '>
 
-<div className="p-4 ">
+<div className="md:p-4  ">
 
 {/* table */}
 
@@ -116,10 +116,10 @@ function Checkout() {
  {/* head */}
    <thead className='border-b border-[#E2E2E2] '>
    <tr>
-       <th className="py-2 sm:px-4 px-2 sm:text-left sm:w-[350px] w-[150px] text-[#000000] font_poppins font-bold sm:text-[12px] text-[8px] sm:leading-[48px]">PRODUCT</th>
-       <th className="py-2  sm:px-4 px-2 sm:text-left  text-[#000000] font_poppins font-bold  sm:text-[12px] text-[8px] leading-[48px]  sm:w-[20%] w-[10%]">PRICE</th>
-       <th className="py-2  sm:px-4 px-2 sm:text-left  text-[#000000] font_poppins font-bold  sm:text-[12px] text-[8px] leading-[48px]  sm:w-[20%] w-[10%]">QUANTITY</th>
-       <th className="py-2  sm:px-4 px-2 text-left  text-[#000000] font_poppins font-bold  sm:text-[12px] text-[8px] leading-[48px]  sm:w-[20%] w-[10%]">SUBTOTAL</th>
+       <th className="py-2 sm:px-4 sm:text-left sm:w-[350px] w-[100px] text-[#000000] font_poppins font-bold sm:text-[12px] text-[8px] sm:leading-[48px] ">PRODUCT</th>
+       <th className="py-2  sm:px-4 sm:text-left  text-[#000000] font_poppins font-bold  sm:text-[12px] text-[8px] leading-[48px]  sm:w-[20%] w-[10%]">PRICE</th>
+       <th className="py-2  sm:px-4  sm:text-left  text-[#000000] font_poppins font-bold  sm:text-[12px] text-[8px] leading-[48px]  sm:w-[20%] w-[10%]">QUANTITY</th>
+       <th className="py-2  sm:px-4  text-left  text-[#000000] font_poppins font-bold  sm:text-[12px] text-[8px] leading-[48px]  sm:w-[20%] w-[10%]">SUBTOTAL</th>
    </tr>
    </thead>
 
@@ -128,15 +128,16 @@ function Checkout() {
    {cartItems.map(item => (
      <tr key={item.product._id} className='h-[100px]'>
        <td className='py-2 px-4'>
-         <div className='flex sm:flex-row flex-col gap-[6px] relative items-center'>
+         <div className='flex md:flex-row flex-col gap-[6px] relative items-center'>
            <img onClick={()=>{removeFromCart(item.product._id)}} src={remove} alt='remove' className='absolute left-0 sm:left-[60px] sm:top-[-10px]' />
            <div className='bg-[#F9F9F9] sm:w-[80px] sm:h-[80px] w-[40px] h-[30px] flex justify-center items-center'>
              <img src={phone} alt='phone' className='w-[40px] h-[60px]' />
            </div>
-           <p className='text-[#000000] font_poppins font-bold sm:text-[12px] text-[8px] '>{item.product.name}</p>
+
+           <p className='text-[#000000] font_poppins font-bold md:text-[12px] sm:text-[8px] text-[6px] md:block hidden '>{item.product.name}</p>
          </div>
        </td>
-       <td className="py-2 px-4 text-[#000000] font_poppins font-bold sm:text-[12px] text-[6px] leading-[48px]">
+       <td className="py-2 px-4 text-[#000000] font_poppins font-bold sm:text-[12px] text-[6px] md:leading-[48px] ">
          INR {item.product.price.toFixed(2)}
        </td>
        <td className="py-2 px-4">
@@ -158,7 +159,7 @@ function Checkout() {
            </div>
          </div>
        </td>
-       <td className="py-2 px-4 text-[#000000] font_poppins font-bold sm:text-[12px] text-[6px] leading-[48px]">
+       <td className="py-2 px-4 text-[#000000] font_poppins font-bold sm:text-[12px] text-[6px] md:leading-[48px]">
          INR {(item.product.price * item.quantity).toFixed(2)}
        </td>
      </tr>
