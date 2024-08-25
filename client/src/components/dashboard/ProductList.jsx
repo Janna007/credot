@@ -4,10 +4,12 @@ import edit from '../../assets/edit.png'
 import icondel from '../../assets/icondel.png'
 import api from '../../api/api'
 import EditModal from './EditModal'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function ProductList() {
+  const navigate=useNavigate()
 
     const[products,setProducts]=useState([])
   const [error,setError]=useState()
@@ -62,7 +64,17 @@ function ProductList() {
 
 
   return (
+    <>
+    <div className='flex justify-end w-full px-6 mb-4 mt-4'>
+        <button 
+          className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'
+          onClick={()=>{navigate("/create-product")}}
+        >
+          Create Product
+        </button>
+      </div>
     <div className='flex justify-center 2xl:ml-[150px] xlg:mx-[80px]  xl:mx-[100px] mt-[40px]'>
+      
 <div className="flex flex-wrap">
         {products.map((product) => (
 
@@ -110,6 +122,7 @@ function ProductList() {
       )}
       
     </div>
+    </>
   )
 }
 

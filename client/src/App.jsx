@@ -13,6 +13,7 @@ import MyOrder from './pages/MyOrder'
 import ProtectedRoute from './ProtectedRoute';
 import Dashboard from './pages/Dashboard'
 import AdminOrders from './pages/AdminOrders'
+import CreateProduct from './components/dashboard/CreateProduct'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/my-order' element={<ProtectedRoute element={<MyOrder />} />} />
         <Route path='/dashboard' element={<ProtectedRoute element={<Dashboard />} adminOnly={true} />} />
         <Route path='/orders' element={<ProtectedRoute element={<AdminOrders />}  />} />
+        <Route path='/create-product' element={<ProtectedRoute element={<CreateProduct />}  />} />
         
       </Routes>
       <Footer/>
