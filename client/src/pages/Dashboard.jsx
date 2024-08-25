@@ -1,8 +1,12 @@
 import React from 'react'
+import ProductList from '../components/dashboard/productList'
 
+ 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+   <>
+   <ProductList/>
+   </>
   )
 }
 

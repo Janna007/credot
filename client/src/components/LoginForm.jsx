@@ -41,7 +41,7 @@ function LoginForm() {
 
       if(response.data.statusCode===200){
         setUserData(user)
-        dispatch(login(user))
+        dispatch(login({ userData: user }));
         localStorage.setItem('token', accessToken);
         if(user.isAdmin){
           navigate("/dashboard")

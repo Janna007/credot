@@ -12,6 +12,7 @@ import Success from './components/Success'
 import MyOrder from './pages/MyOrder'
 import ProtectedRoute from './ProtectedRoute';
 import Dashboard from './pages/Dashboard'
+import AdminOrders from './pages/AdminOrders'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/success' element={<ProtectedRoute element={<Success />} />} />
         <Route path='/my-order' element={<ProtectedRoute element={<MyOrder />} />} />
         <Route path='/dashboard' element={<ProtectedRoute element={<Dashboard />} adminOnly={true} />} />
+        <Route path='/orders' element={<ProtectedRoute element={<AdminOrders />}  />} />
         
       </Routes>
       <Footer/>
