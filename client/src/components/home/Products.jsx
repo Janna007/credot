@@ -65,68 +65,7 @@ import api from '../../api/api';
 
 
 function Products() {
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: 'Smartphone X1',
-  //     description: 'The latest smartphone with cutting-edge features and sleek design. Equipped with a high-resolution camera and fast processor.',
-  //     price: 799.99,
-  //     category: 'Electronics',
-  //     image: phone
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Wireless Headphones',
-  //     description: 'Comfortable wireless headphones with noise-canceling technology and long battery life. Perfect for music lovers on the go.',
-  //     price: 149.99,
-  //     category: 'Electronics',
-  //     image:phone
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Leather Sofa',
-  //     description: 'Elegant leather sofa with plush cushions and durable construction. A stylish addition to any living room.',
-  //     price: 999.99,
-  //     category: 'Furniture',
-  //     image: phone
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'Wooden Dining Table',
-  //     description: 'Solid wooden dining table with a modern design. Seats up to six people comfortably and adds a touch of sophistication to your dining area.',
-  //     price: 499.99,
-  //     category: 'Furniture',
-  //     image: phone
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'Men\'s Running Shoes',
-  //     description: 'High-performance running shoes designed for comfort and durability. Ideal for both casual and serious runners.',
-  //     price: 89.99,
-  //     category: 'Clothing',
-  //     image: 'https://via.placeholder.com/300x200?text=Men%27s+Running+Shoes'
-  //   },
-  //   {
-  //     id: 6,
-  //     name: 'Women\'s Summer Dress',
-  //     description: 'Light and breezy summer dress perfect for warm weather. Features a vibrant floral pattern and comfortable fit.',
-  //     price: 59.99,
-  //     category: 'Clothing',
-  //     image: 'https://via.placeholder.com/300x200?text=Women%27s+Summer+Dress'
-  //   },
-  //   {
-  //     id: 7,
-  //     name: 'Organic Green Tea',
-  //     description: 'Premium organic green tea leaves, rich in antioxidants and flavor. Ideal for a refreshing and healthy beverage.',
-  //     price: 12.99,
-  //     category: 'Grocery',
-  //     image: 'https://via.placeholder.com/300x200?text=Organic+Green+Tea'
-  //   },
-    
-  // ];
-
-
-
+  
   const[products,setProducts]=useState([])
   const [error,setError]=useState()
 
