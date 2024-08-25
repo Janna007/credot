@@ -7,6 +7,7 @@ import color2 from '../assets/colour2.png'
 import color3 from '../assets/colour3.png'
 import color4 from '../assets/colour4.png'
 import color5 from '../assets/colour5.png'
+import Description from '../components/productDetails/Description.jsx';
 
 function ProductDetails() {
 
@@ -163,6 +164,10 @@ function ProductDetails() {
 
                </div>
           </div>
+      </div>
+
+      <div>
+        <Description />
       </div>
 
    </>
