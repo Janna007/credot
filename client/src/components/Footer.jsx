@@ -10,13 +10,13 @@ function Footer() {
   return (
     <div className='min-h-[350px] overflow-hidden'>
       <div className='pt-[34px] lg:block hidden'>
-        <img src={logo} alt='logo'  className='w-[134px] h-[48px] ml-[180px] '/>
+        <img src={logo} alt='logo'  className='w-[134px] h-[48px] ml-[180px] 2xl:ml-[250px]   '/>
       </div>
 
-      <div className='flex lg:flex-row flex-col-reverse mt-[50px] xl:gap-[100px] lg:gap-[60px]  gap-[80px]  lg:pl-0 md:pl-[250px]  sm:pl-[100px] pl-[60px] '>
+      <div className='flex lg:flex-row flex-col-reverse mt-[50px] 4xl:gap-[300px] 2xl:gap-[230px] xl:gap-[100px] lg:gap-[60px]  gap-[80px]  lg:pl-0 md:pl-[250px]  sm:pl-[100px] pl-[60px]  '>
 
 
-         <div className='lg:ml-[180px] '>
+         <div className='lg:ml-[180px] 2xl:ml-[250px] '>
            <p className='font_poppins text-sm font-semibold leading-3 ' style={{ letterSpacing: '0.75px' }}>CONNECTED WITH US</p>
 
            <div className='flex  mt-[20px] gap-[15px]'>
