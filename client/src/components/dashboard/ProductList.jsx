@@ -73,9 +73,9 @@ function ProductList() {
           Create Product
         </button>
       </div>
-    <div className='flex justify-center 2xl:ml-[150px] xlg:mx-[80px]  xl:mx-[100px] mt-[40px]'>
+    <div className='flex justify-center 2xl:ml-[150px] xlg:mx-[80px]  xl:mx-[100px] mt-[40px] '>
       
-<div className="flex flex-wrap">
+<div className="flex flex-wrap ">
         {products.map((product) => (
 
           // card

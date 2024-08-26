@@ -95,7 +95,7 @@ function Brands() {
           navigation
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
-          className='px-[120px]'
+          className='px-[120px] 2xl:px-[200px]'
         >
          
            {brands.map((brand, index) => (

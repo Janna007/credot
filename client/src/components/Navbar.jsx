@@ -17,11 +17,27 @@ function Navbar() {
       navigate("/my-order"); // Navigate to the user's orders page
     }
   };
+
+  const handleClick=()=>{
+    if (userData?.isAdmin) {
+      navigate("/dashboard"); // Navigate to the admin orders page
+    } else {
+      navigate("/home"); // Navigate to the user's orders page
+    }
+  }
+
+  const handleCart=()=>{
+    if (userData?.isAdmin) {
+      navigate("/dashboard"); // Navigate to the admin orders page
+    } else {
+      navigate("/cart"); // Navigate to the user's orders page
+    }
+  }
   return (
     <>
-    <div className='min-h-[90px]  pt-[34px] flex 4xl:gap-[1500px] 3xl:gap-[1200px] 2xl:gap-[1100px] xl:gap-[750px] lg:gap-[400px] md:gap-[200px] sm:gap-[150px] xsm:gap-[140px]  gap-[70px]  overflow-hidden'>
+    <div className='min-h-[90px]  pt-[34px] flex  3xl:gap-[1200px] 2xl:gap-[1100px] xl:gap-[750px] lg:gap-[400px] md:gap-[200px] sm:gap-[150px] xsm:gap-[140px]  gap-[70px]  overflow-hidden'>
   
-        <img src={logo} alt='logo'  className='w-[134px] h-[48px] md:ml-[180px] sm:ml-[60px] ml-[20px] '/>
+        <img src={logo} alt='logo'  className='w-[134px] h-[48px] 2xl:ml-[170px] xl:ml-[80px] md:ml-[180px] sm:ml-[60px] ml-[20px]' onClick={handleClick}/>
 
 
         <div className='flex gap-[20px]  '>
@@ -33,7 +49,7 @@ function Navbar() {
                     {/* Vertical line */}
                </div>
            <div  className='bg-gray-400  sm:h-[40px] sm:w-[40px] w-[35px] h-[35px]  rounded-full flex justify-center items-center '>
-           <img src={carticon} alt='carticon'  className='w-[20px]' onClick={()=>{navigate("/cart")}} />
+           <img src={carticon} alt='carticon'  className='w-[20px]' onClick={handleCart} />
            </div>
            
         </div>

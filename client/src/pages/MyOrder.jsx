@@ -75,7 +75,7 @@ function MyOrder() {
   return (
 
     <>
-    <div className=' px-[20px] pt-[20px] mt-[60px] font_poppins font-semibold text-[32px] leading-[48.96px]'>
+    <div className=' 2xl:px-[100px] lg:px-[80px] px-[20px] pt-[20px] mt-[60px] font_poppins font-semibold text-[32px] leading-[48.96px]'>
       <h1>My Orders</h1>
     </div>
 
@@ -89,7 +89,7 @@ function MyOrder() {
       ):(
         
       
-   <div className="order-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+   <div className="order-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6 lg:px-[80px] px-6 3xl:px-[100px]">
 {orderData.map((order) => (
   <div key={order._id} className="order-card border p-4 border-[#B9B9B9] bg-white mb-4">
     <div className="order-header flex items-center justify-between mb-2">
