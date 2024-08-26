@@ -1,12 +1,15 @@
 import React from 'react'
 
+
+
 import { Navigation,  A11y } from 'swiper/modules';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-
-
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
 import brand1 from '../../../assets/brand1.png'
@@ -62,43 +65,54 @@ function Brands() {
 
 {/* brand slide */}
 
-<div className='w-full px-[20px] mt-[50px]'>
-  <Swiper
-    modules={[Navigation, A11y]}
-    spaceBetween={30}
-    slidesPerView={5}
-    navigation
-    breakpoints={{
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      1280: {
-        slidesPerView: 5,
-        spaceBetween: 30,
-      },
-    }}
-    onSwiper={(swiper) => console.log(swiper)}
-    onSlideChange={() => console.log('slide change')}
-  >
-    {brands.map((brand, index) => (
-      <SwiperSlide key={index}>
-        <div className='flex justify-center items-center'>
-          <img src={brand.imageUrl} alt='brandicon' className='' />
+    <div className='mt-[50px] custom-swiper-2 '>
+        <Swiper
+          modules={[Navigation, A11y]}
+          
+          
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 150,
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 120,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 130,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 120,
+            },
+            1440: {
+              slidesPerView: 7,
+              spaceBetween: 50,
+            },
+          }}
+          navigation
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+          className='px-[120px]'
+        >
+         
+           {brands.map((brand, index) => (
+        
+        <SwiperSlide  >
+         <div key={index}>
+             <img src={brand.imageUrl}  alt='brandicon'/>
         </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
-</div>
+        </SwiperSlide>
+        
+       ))}
 
+          
+        
+        </Swiper>
+   
+     </div>
 
      <div className=' h-[1px] bg-[#EEEEEE] mt-[120px]  mx-[100px] mb-[30px]'>
       {/* horizontal line */}
