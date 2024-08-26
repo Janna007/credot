@@ -21,7 +21,7 @@ function Navbar() {
     <>
     <div className='min-h-[90px]  pt-[34px] flex 4xl:gap-[1500px] 3xl:gap-[1200px] 2xl:gap-[1100px] xl:gap-[750px] lg:gap-[400px] md:gap-[200px] sm:gap-[150px] xsm:gap-[140px]  gap-[70px]  overflow-hidden'>
   
-        <img src={logo} alt='logo'  className='w-[134px] h-[48px] md:ml-[180px] sm:ml-[60px] ml-[20px] ' onClick={()=>{navigate("/home")}}/>
+        <img src={logo} alt='logo'  className='w-[134px] h-[48px] md:ml-[180px] sm:ml-[60px] ml-[20px] '/>
 
 
         <div className='flex gap-[20px]  '>
