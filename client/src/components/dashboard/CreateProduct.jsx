@@ -99,6 +99,7 @@ function CreateProduct() {
               required
             />
           </div>
+          <p className='mt-2 p-3 text-red-600 rounded-md text-center font_poppins'>{error}</p>
           <div>
             <button
               type="submit"
