@@ -73,55 +73,39 @@ function ProductList() {
           Create Product
         </button>
       </div>
-    <div className='flex justify-center 2xl:ml-[150px] xlg:mx-[80px]  xl:mx-[100px] mt-[40px] '>
-      
-<div className="flex flex-wrap ">
-        {products.map((product) => (
-
-          // card
-       
-         <div key={product._id} className='bg-white p-4 w-[250px] h-[350px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col '>
-           <div className=' flex justify-center items-center flex-col relative'>
-            <img src={edit} alt='hot' className='absolute top-[-10px] left-[-4px]'  onClick={() => handleEditClick(product)}/>
-            
-               <img src={phone} className='h-[150px]' /> 
-               <img src={icondel}  alt='add' className='absolute right-0 w-[20px] h-[20px]' onClick={()=>removeProduct(product._id)} />
-            
 
 
-             <div className='flex flex-col gap-[25px] mt-[30px]'>
-               <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] leading-[15px] uppercase' style={{letterSpacing:"1px"}}> {product.category}</p>
-               <h1 className='text-[#000000] font_poppins font-medium text-[14px] leading-[23px] '>{product.name}</h1>
-               <div className='flex gap-[15px]'>
-                           <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
-                           <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>{product.price}</p>
-                           <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
-                         </div>
-              
-             </div>
-             
-           </div>
-            
-        
-         
-        
-         </div>
-
-         
-           
-
-        ))}
+      <div className='flex justify-center mt-[40px] px-4 md:px-8 lg:px-16'>
+  <div className="flex flex-wrap justify-center">
+    {products.map((product) => (
+      <div key={product._id} className='bg-white p-4 w-[250px] h-[350px] border-[#B9B9B9] border-[1px] flex flex-col items-center'>
+        <div className='relative flex flex-col items-center'>
+          <img src={edit} alt='edit' className='absolute top-[-10px] left-[-4px] cursor-pointer' onClick={() => handleEditClick(product)} />
+          <img src={phone} className='h-[150px]' alt='product' />
+          <img src={icondel} alt='delete' className='absolute right-0 w-[20px] h-[20px] cursor-pointer' onClick={() => removeProduct(product._id)} />
+          <div className='flex flex-col gap-[25px] mt-[30px] text-center'>
+            <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] leading-[15px] uppercase' style={{ letterSpacing: "1px" }}> {product.category}</p>
+            <h1 className='text-[#000000] font_poppins font-medium text-[14px] leading-[23px]'>{product.name}</h1>
+            <div className='flex gap-[15px] justify-center'>
+              <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
+              <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>{product.price}</p>
+              <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
+            </div>
+          </div>
+        </div>
       </div>
+    ))}
+  </div>
 
-      {isModalOpen && selectedProduct && (
-        <EditModal 
-          product={selectedProduct} 
-          onClose={handleModalClose} 
-          onSave={fetchProducts} // Refresh the product list after editing
-        />
-      )}
-      
-    </div>
+  {isModalOpen && selectedProduct && (
+    <EditModal 
+      product={selectedProduct} 
+      onClose={handleModalClose} 
+      onSave={fetchProducts} // Refresh the product list after editing
+    />
+  )}
+</div>
+
     </>
   )
 }
