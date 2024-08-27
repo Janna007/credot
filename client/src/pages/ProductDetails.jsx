@@ -12,7 +12,7 @@ import Description from '../components/productDetails/Description.jsx';
 function ProductDetails() {
 
    const [quantity, setQuantity] = useState(1);
-
+   const [showPopup, setShowPopup] = useState(false);
  
    const increaseQuantity = () => {
      setQuantity(prevQuantity => prevQuantity + 1);
@@ -57,6 +57,12 @@ function ProductDetails() {
      try {
        const response=await api.post("/cart/add",{productId:id,quantity})
        console.log(response)
+       if(response.data.statusCode===200){
+        setShowPopup(true); 
+        setTimeout(() => {
+          setShowPopup(false);  
+        }, 5000);
+       }
      } catch (error) {
       console.error('Error:', error);
      }
@@ -149,7 +155,11 @@ function ProductDetails() {
                           <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
                             <button className='text-white font_poppins font-bold text-[14px] leading-[34px]' onClick={()=>{handleSubmit()}}>ADD TO CART</button>
                           </div>
-
+                          {showPopup && (
+                              <div className="popup-message">
+                                Added to cart successfully!
+                              </div>
+                            )}
 
 
                         </div>
