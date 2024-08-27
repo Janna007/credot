@@ -85,7 +85,7 @@ function MyOrder() {
 
 
     {orderData.length===0 ? (
-         <p className='text-center'>You have no orders yet!! <Link to={"/home"}>Click here to Continue Shopping</Link></p>
+         <p className='text-center'>You have no orders yet!! <Link to={"/home"}>continue?</Link></p>
       ):(
         
       

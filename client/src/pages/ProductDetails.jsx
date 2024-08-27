@@ -61,7 +61,7 @@ function ProductDetails() {
         setShowPopup(true); 
         setTimeout(() => {
           setShowPopup(false);  
-        }, 5000);
+        }, 2000);
        }
      } catch (error) {
       console.error('Error:', error);
@@ -159,7 +159,7 @@ function ProductDetails() {
 
                         </div>
                         {showPopup && (
-                              <div className="popup-message">
+                              <div className="popup-message text-green-600">
                                 Added to cart successfully!
                               </div>
                             )}
