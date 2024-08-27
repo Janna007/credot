@@ -110,22 +110,32 @@ function ProductPhone() {
    
    {products.map((product) => (
        <Link to={`/product/${product._id}`}>
-     <div key={product._id} className='bg-white p-4 w-full sm:w-[250px] md:w-[300px] lg:w-[380px] h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col'>
-       <div className='flex justify-center items-center flex-col relative'>
-         <img src={hot} alt='hot' className='absolute top-[-10px] left-[-4px]' />
-         <img src={phone} className='h-[100px] md:h-[150px] lg:h-[200px] w-auto' />
-         <img src={add} alt='add' className='absolute right-0' />
-         <div className='flex flex-col gap-[10px] mt-[20px] md:mt-[30px]'>
-           <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] md:text-[12px] lg:text-[14px] leading-[15px] md:leading-[18px] uppercase' style={{ letterSpacing: "1px" }}>{product.category}</p>
-           <h1 className='text-[#000000] font_poppins font-medium text-[14px] md:text-[16px] lg:text-[18px] leading-[20px] md:leading-[23px]'>{product.name}</h1>
-           <div className='flex gap-[10px] md:gap-[15px]'>
-             <p className='text-[#606060] font-bold text-[12px] md:text-[14px] lg:text-[16px] leading-[15px]'>INR</p>
-             <p className='text-[#000000] font-extrabold text-[18px] md:text-[20px] lg:text-[22px] leading-[15px]'>{product.price}</p>
-             <p className='text-[#777777] font-semibold text-[14px] md:text-[16px] lg:text-[18px] leading-[15px] line-through'>5000.00</p>
+     <div className='bg-white p-4 w-[250px] h-[350px]  border-[#B9B9B9] border-[1px] flex justify-center items-center flex-col '>
+           <div className=' flex justify-center items-center flex-col relative w-[230px] '>
+            <img src={hot} alt='hot' className='absolute top-[-10px] left-[-4px]'/>
+            
+               <img src={phone} className='h-[150px]' /> 
+               <img src={add}  alt='add' className='absolute right-[20px] w-[20px] h-[20px]'  />
+            
+
+
+             <div className='flex flex-col gap-[25px] mt-[30px]'>
+               <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] leading-[15px] uppercase' style={{letterSpacing:"1px"}}> {product.category}</p>
+               <h1 className='text-[#000000] font_poppins font-medium text-[14px] leading-[23px] '>{product.name}</h1>
+               <div className='flex gap-[15px]'>
+                           <p className='text-[#606060] font-bold text-[12px] leading-[15px]'>INR</p>
+                           <p className='text-[#000000] font-extrabold text-[18px] leading-[15px]'>{product.price}</p>
+                           <p className='text-[#777777] font-semibold text-[16px] leading-[15px] line-through'>5000.00</p>
+                         </div>
+              
+             </div>
+             
            </div>
+            
+        
+         
+        
          </div>
-       </div>
-     </div>
      </Link>
    ))}
   

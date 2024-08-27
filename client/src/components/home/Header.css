@@ -1,3 +1,8 @@
+.custom-swiper-1 {
+  position: relative; /* Ensure the swiper container is the positioned ancestor */
+  overflow: visible; /* Allow the buttons to overflow the container */
+}
+
 .custom-swiper-1 .swiper-button-prev,
 .custom-swiper-1 .swiper-button-next {
   position: absolute;
@@ -9,12 +14,11 @@
   color: #ffff;
   background-color: #808080; /* Gray background color */
   border-radius: 100%; /* Makes the button circular */
-  
-
 }
 
+/* Default button size */
 .custom-swiper-1 .swiper-button-prev,
-.custom-swiper-1.swiper-button-next {
+.custom-swiper-1 .swiper-button-next {
   width: 30px;
   height: 30px;
 }
@@ -56,6 +60,7 @@
     height: 60px;
   }
 }
+
 /* Default Position for Small Devices */
 .custom-swiper-1 .swiper-button-prev {
   left: 5px;
@@ -97,6 +102,8 @@
     right: 30px;
   }
 }
+
+/* Set custom navigation size variable */
 :root {
-  --swiper-navigation-size: 20px;
+  --swiper-navigation-size: 20px; /* Adjust this as needed */
 }

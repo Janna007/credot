@@ -16,7 +16,7 @@ function Footer() {
       <div className='flex lg:flex-row flex-col-reverse mt-[50px] 4xl:gap-[300px] 2xl:gap-[230px] xl:gap-[100px] lg:gap-[60px]  gap-[80px]  lg:pl-0 md:pl-[250px]  sm:pl-[100px] pl-[60px]  '>
 
 
-         <div className='2xl:ml-[170px] xl:ml-[80px] md:ml-[180px] '>
+         <div className='2xl:ml-[170px] xl:ml-[80px] lg:ml-[180px] '>
            <p className='font_poppins text-sm font-semibold leading-3 ' style={{ letterSpacing: '0.75px' }}>CONNECTED WITH US</p>
 
            <div className='flex  mt-[20px] gap-[15px]'>
