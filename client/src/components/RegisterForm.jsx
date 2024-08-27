@@ -29,7 +29,7 @@ function RegisterForm() {
       const response=await api.post("/users/register",formData)
      console.log(response)
 
-     if(response.data.statusCode===200){
+     if(response.data.statusCode===201){
       navigate("/")
      }
 
