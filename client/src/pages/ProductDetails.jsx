@@ -155,14 +155,15 @@ function ProductDetails() {
                           <div className='flex justify-center items-center w-[210px] h-[52px] bg-black rounded-[1px]'>
                             <button className='text-white font_poppins font-bold text-[14px] leading-[34px]' onClick={()=>{handleSubmit()}}>ADD TO CART</button>
                           </div>
-                          {showPopup && (
+                          
+
+                        </div>
+                        {showPopup && (
                               <div className="popup-message">
                                 Added to cart successfully!
                               </div>
                             )}
 
-
-                        </div>
 
                         <div className=' h-[1px] bg-[#EEEEEE] mt-[20px]  '>
                           {/* horizontal line */}
