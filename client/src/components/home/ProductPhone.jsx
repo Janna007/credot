@@ -111,9 +111,9 @@ function ProductPhone() {
     <Link to={`/product/${product._id}`} key={product._id} className='w-full sm:w-[250px] md:w-[300px] lg:w-[380px]'>
       <div className='bg-white p-4 h-full sm:h-[400px] md:h-[450px] lg:h-[500px] border-[#B9B9B9] border-[1px] flex flex-col justify-center items-center'>
         <div className='relative flex flex-col items-center'>
-          <img src={hot} alt='hot' className='absolute top-[-10px] left-[-10px] w-[30px] h-[30px]' />
+        <img src={hot} alt='hot' className='absolute top-[-10px] left-[-4px]' />
           <img src={phone} className='h-[100px] md:h-[150px] lg:h-[200px] w-auto' alt='product' />
-          <img src={add} alt='add' className='absolute right-2 top-2 w-[20px] h-[20px]' />
+          <img src={add} alt='add' className='absolute right-0' />
           <div className='flex flex-col gap-[10px] mt-[20px] md:mt-[30px] text-center'>
             <p className='font_PlusJakartaSans text-[#1AA5C3] font-bold text-[10px] md:text-[12px] lg:text-[14px] leading-[15px] md:leading-[18px] uppercase' style={{ letterSpacing: "1px" }}>{product.category}</p>
             <h1 className='text-[#000000] font_poppins font-medium text-[14px] md:text-[16px] lg:text-[18px] leading-[20px] md:leading-[23px]'>{product.name}</h1>
