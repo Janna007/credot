@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductList from '../components/dashboard/productList'
+import ProductList from '../components/dashboard/ProductList'
 
  
 function Dashboard() {
